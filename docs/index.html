@@ -181,122 +181,132 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <img src="./static/images/faces.jpeg" alt="" border="0" height="300" width="750">
-    <div class="content has-text-justified">
-        <p>Figure 1. Examples of image pairs depicting variations in age, quality, and combined age + quality factors. 
-          The top row illustrates easy pairs with high recognizability, the middle row depicts pairs of medium 
-          difficulty in recognition, and the bottom row showcases hard pairs posing challenges in verification. 
-          It is evident that the combined effect of age and quality variations notably reduces recognizability.
-        </p>
-        <!-- <img src="./static/images/visual_abstract.png" alt="" border="0" height="300" width="750">
-        <p>Figure 2. The proposed PETAL<i>face</i>: a parameter efficient transfer learning approach
-            adapts to low-resolution datasets
-            beating the performance of pre-trained models with negligible drop in performance on
-            high-resolution and mixed-quality
-            datasets. PETAL<i>face</i> enables development of generalized models achieving competitive
-            performance on
-            high-resolution (LFW, CFP-FP, CPLFW, AgeDB, CALFW, CFP-FF) and mixed-quality datasets
-            (IJB-B, IJB-C) with big
-            enhancements in low-quality surveillance quality datasets (TinyFace, BRIAR, IJB-S)
-        </p> -->
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Face recognition in the presence of age and quality variations
-            poses a formidable challenge. While recent margin-based
-            loss functions have shown promise in addressing these variations individually, real-world scenarios such as selfie versus ID face matching often involve simultaneous variations
-            of both age and quality. In response, we propose a comprehensive framework aimed at mitigating the impact of these
-            variations while preserving vital identity-related information
-            crucial for accurate face recognition. The proposed adaptive
-            margin-based loss function AQUAFace exhibits adaptiveness
-            towards hard samples characterized by significant age and
-            quality variations. This loss function is meticulously designed
-            to prioritize the preservation of identity-related features while
-            simultaneously mitigating the adverse effects of age and quality variations on face recognition accuracy. To validate the
-            effectiveness of our approach, we focus on the specific task
-            of selfie versus ID document matching. Our results demonstrate that AQUAFace effectively handles age and quality differences, leading to enhanced recognition performance. Additionally, we explore the benefits of fine-tuning the recognition model with synthetic data, further boosting performance.
-            As a result, our proposed model, AQUAFace, achieves stateof-the-art performance on six benchmark datasets (CALFW,
-            CPLFW, CFP-FP, AgeDB, IJB-C, and TinyFace), each exhibiting diverse age and quality variations.
-                      </p>
-        </div>
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <img src="./static/images/faces.jpeg" alt="" border="0" height="300" width="750">
+            <div class="content has-text-justified">
+                <p>Figure 1. Examples of image pairs depicting variations in age, quality, and combined age + quality factors. 
+                  The top row illustrates easy pairs with high recognizability, the middle row depicts pairs of medium 
+                  difficulty in recognition, and the bottom row showcases hard pairs posing challenges in verification. 
+                  It is evident that the combined effect of age and quality variations notably reduces recognizability.
+                </p>
+              <h2 class="title is-3">Abstract</h2>
+              <!-- <img src="./static/images/visual_abstract.png" alt="" border="0" height="300" width="750">
+                  <p>Figure 2. The proposed PETAL<i>face</i>: a parameter efficient transfer learning approach
+                      adapts to low-resolution datasets
+                      beating the performance of pre-trained models with negligible drop in performance on
+                      high-resolution and mixed-quality
+                      datasets. PETAL<i>face</i> enables development of generalized models achieving competitive
+                      performance on
+                      high-resolution (LFW, CFP-FP, CPLFW, AgeDB, CALFW, CFP-FF) and mixed-quality datasets
+                      (IJB-B, IJB-C) with big
+                      enhancements in low-quality surveillance quality datasets (TinyFace, BRIAR, IJB-S)
+                  </p> -->
+                  <p>
+                    Face recognition in the presence of age and quality variations
+                    poses a formidable challenge. While recent margin-based
+                    loss functions have shown promise in addressing these variations individually, real-world scenarios such as selfie versus ID face matching often involve simultaneous variations
+                    of both age and quality. In response, we propose a comprehensive framework aimed at mitigating the impact of these
+                    variations while preserving vital identity-related information
+                    crucial for accurate face recognition. The proposed adaptive
+                    margin-based loss function AQUAFace exhibits adaptiveness
+                    towards hard samples characterized by significant age and
+                    quality variations. This loss function is meticulously designed
+                    to prioritize the preservation of identity-related features while
+                    simultaneously mitigating the adverse effects of age and quality variations on face recognition accuracy. To validate the
+                    effectiveness of our approach, we focus on the specific task
+                    of selfie versus ID document matching. Our results demonstrate that AQUAFace effectively handles age and quality differences, leading to enhanced recognition performance. Additionally, we explore the benefits of fine-tuning the recognition model with synthetic data, further boosting performance.
+                    As a result, our proposed model, AQUAFace, achieves stateof-the-art performance on six benchmark datasets (CALFW,
+                    CPLFW, CFP-FP, AgeDB, IJB-C, and TinyFace), each exhibiting diverse age and quality variations.
+                  </p>
+              </div>
+          </div>
       </div>
-    </div>
+      <!--/ Abstract. -->
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">AQUAFace Framework</h2>
-        <div class="content has-text-justified">
-          <img src="./static/images/model.jpeg" alt="" border="0" height="300" width="750">
-          <div class="content has-text-justified">
-          <p>Overview of the proposed AQUAFace model: We have introduces a novel adaptive margin-based loss for 
-            age-invariant, quality-aware face recognition, specifically targeting selfie vs. ID verification tasks. 
-            It comprises three key components:
-          </p>
-          <ol>
-            <li><b>AQUALR</b>: A Gaussian Mixture Model (GMM)-based module computes an Age and Quality Likelihood 
-              Ratio (AQUALR), integrating age and quality labels into pairwise similarity scores. This enables 
-              dynamic sample weighting based on age and quality variations.
-            </li>
-            
-            <li><b>Adaptive Contrastive Loss</b>: The loss dynamically adjusts margins using AQUALR to penalize 
-              harder samples characterized by large age differences or low quality, enhancing intra-class 
-              compactness and inter-class separation. 
-            
-            <li><b>Identity Preservation</b>: A fine-tuned ArcFace model ensures robust identity-related 
-              feature extraction, utilizing margin-based softmax loss to maintain discriminative power under diverse variations.  
-            
-            The combined loss function integrates these components to optimize for both identity preservation and resilience against 
-            age and quality changes. The framework incorporates real and synthetic datasets for training, using synthetic data 
-            fine-tuning to enrich intra-class variability. The architecture leverages a Siamese network with shared weights 
-            and cosine similarity for feature comparison, achieving state-of-the-art performance across benchmark datasets.
-          </p>
-        </div>
-      </div>
-    </div>
+      <!-- Paper video. -->
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
-        <div class="content has-text-justified">
-          <img src="./static/images/table1.jpeg" alt="" border="0" height="300" width="750">
-          <div class="content has-text-justified">
-          <p>Table 1: Performance evaluation of various face verification models on Real (VerifyMe) and Synthetic (Syn AM) datasets after
-            bin-wise partitioning. We report GAR@0.1%FAR and GAR@1%FAR in easy, medium and hard categories.
-          </p>
-          <img src="./static/images/table2.jpeg" alt="" border="0" height="300" width="750">
-          <div class="content has-text-justified">
-          <p>Table 2: Performance comparison of recent methods on benchmark datasets with the AQUAFace model for ResNet100 and
-            ResNe18 backbone. For high quality datasets, 1:1 verification accuracy is reported, following the protocol from (Kim, Jain,
-            and Liu 2022). For mixed quality datasets, TAR@FAR=0.01% is reported. For TinyFace, closed-set rank retrieval (Rank-1 and
-            Rank-5) is reported. Note: The performance of the pretrained models on MS1MV2 is sourced from their respective papers.
-          </p>
-          <img src="./static/images/table3.jpeg" alt="" border="0" height="300" width="750">
-          <div class="content has-text-justified">
-          <p>Table 3: Comparison on benchmark datasets with the AQUAFace model trained on different data types. The first row represents
-            the model trained on real data (VerifyMe). The second row shows the model trained on the synthetic AgeDB and Morph
-            datasets. The last row presents the model’s performance when trained on VerifyMe and fine-tuned on the synthetic AgeDB and
-            Morph. 1:1 verification accuracy is reported, following the protocol from (Kim, Jain, and Liu 2022)
-          </p>
+      <section class="section">
+          <div class="container is-max-desktop">
+              <!-- Abstract. -->
+              <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                      <h2 class="title is-3">AQUAFace Framework</h2>
+                      <div class="content has-text-justified">
+                          <h5 class="subtitle has-text-centered"></h5>
+
+                          <img src="./static/images/model.jpeg" alt="" border="0" height="300" width="750">
+                          <!-- <div class="content has-text-justified"> -->
+                          <p>Overview of the proposed AQUAFace model: We have introduces a novel adaptive margin-based loss for 
+                            age-invariant, quality-aware face recognition, specifically targeting selfie vs. ID verification tasks. 
+                            It comprises three key components:
+                          </p>
+                          <ol>
+                            <li><b>AQUALR</b>: A Gaussian Mixture Model (GMM)-based module computes an Age and Quality Likelihood 
+                              Ratio (AQUALR), integrating age and quality labels into pairwise similarity scores. This enables 
+                              dynamic sample weighting based on age and quality variations.
+                            </li>
+                            
+                            <li><b>Adaptive Contrastive Loss</b>: The loss dynamically adjusts margins using AQUALR to penalize 
+                              harder samples characterized by large age differences or low quality, enhancing intra-class 
+                              compactness and inter-class separation. 
+                            
+                            <li><b>Identity Preservation</b>: A fine-tuned ArcFace model ensures robust identity-related 
+                              feature extraction, utilizing margin-based softmax loss to maintain discriminative power under diverse variations.  
+                            
+                            The combined loss function integrates these components to optimize for both identity preservation and resilience against 
+                            age and quality changes. The framework incorporates real and synthetic datasets for training, using synthetic data 
+                            fine-tuning to enrich intra-class variability. The architecture leverages a Siamese network with shared weights 
+                            and cosine similarity for feature comparison, achieving state-of-the-art performance across benchmark datasets.
+                          </p>
+
+
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="section">
+          <div class="container is-max-desktop">
+              <div class="columns is-centered has-text-centered">
+                  <div class="column is-four-fifths">
+                      <h2 class="title is-3">Results</h2>
+                      <div class="content has-text-justified">
+                          <h5 class="subtitle has-text-centered"></h5>
+                          <img src="./static/images/table1.jpeg" alt="" border="0" height="300" width="750">
+                          <!-- <div class="content has-text-justified"> -->
+                          <p>Table 1: Performance evaluation of various face verification models on Real (VerifyMe) and Synthetic (Syn AM) datasets after
+                            bin-wise partitioning. We report GAR@0.1%FAR and GAR@1%FAR in easy, medium and hard categories.
+                          </p>
           
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <!-- <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div> -->
-    <!--/ Paper video. -->
+                      </div>
+                      <div class="content has-text-justified">
+                          <h5 class="subtitle has-text-centered"></h5>
+                          <img src="./static/images/table2.jpeg" alt="" border="0" height="300" width="750">
+                          <!-- <div class="content has-text-justified"> -->
+                          <p>Table 2: Performance comparison of recent methods on benchmark datasets with the AQUAFace model for ResNet100 and
+                            ResNe18 backbone. For high quality datasets, 1:1 verification accuracy is reported, following the protocol from (Kim, Jain,
+                            and Liu 2022). For mixed quality datasets, TAR@FAR=0.01% is reported. For TinyFace, closed-set rank retrieval (Rank-1 and
+                            Rank-5) is reported. Note: The performance of the pretrained models on MS1MV2 is sourced from their respective papers.
+                          </p>
+                      <div class="content has-text-justified">
+                        <h5 class="subtitle has-text-centered"></h5>
+                        <img src="./static/images/table3.jpeg" alt="" border="0" height="300" width="750">
+                        <!-- <div class="content has-text-justified"> -->
+                        <p>Table 3: Comparison on benchmark datasets with the AQUAFace model trained on different data types. The first row represents
+                          the model trained on real data (VerifyMe). The second row shows the model trained on the synthetic AgeDB and Morph
+                          datasets. The last row presents the model’s performance when trained on VerifyMe and fine-tuned on the synthetic AgeDB and
+                          Morph. 1:1 verification accuracy is reported, following the protocol from (Kim, Jain, and Liu 2022)
+                        </p>
+          
+                      </div>
+          
+                      </div>
+                  </div>
+              </div>
+          </div>
   </div>
 </section>
 
