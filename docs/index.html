@@ -6,7 +6,7 @@
         content="AQUAFace improves face recognition under age and quality variations enhancing selfie vs. ID matching">
   <meta name="keywords" content="AQUAFace">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>AQUAFace</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -90,6 +90,8 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">AQUAFace: Age-Invariant Quality Adaptive Face Recognition for Unconstrained
             Selfie vs ID Verification</h1>
+          <h2 style="font-size: 1.5em; color: dimgray; margin-bottom: .5em; margin-top: -.5em;">AAAI 2025
+          </h2>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="">Shivang Agarwal</a><sup>1</sup>,</span>
@@ -176,80 +178,25 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
-      </h2>
-    </div>
-  </div>
-</section>
-
-<!-- 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
+<img src="./static/images/faces.jpeg" alt="" border="0" height="300" width="750">
+    <div class="content has-text-justified">
+        <p>Figure 1. Examples of image pairs depicting variations in age, quality, and combined age + quality factors. 
+          The top row illustrates easy pairs with high recognizability, the middle row depicts pairs of medium 
+          difficulty in recognition, and the bottom row showcases hard pairs posing challenges in verification. 
+          It is evident that the combined effect of age and quality variations notably reduces recognizability.
+          .
+        </p>
+        <img src="./static/images/visual_abstract.png" alt="" border="0" height="300" width="750">
+        <p>Figure 2. The proposed PETAL<i>face</i>: a parameter efficient transfer learning approach
+            adapts to low-resolution datasets
+            beating the performance of pre-trained models with negligible drop in performance on
+            high-resolution and mixed-quality
+            datasets. PETAL<i>face</i> enables development of generalized models achieving competitive
+            performance on
+            high-resolution (LFW, CFP-FP, CPLFW, AgeDB, CALFW, CFP-FF) and mixed-quality datasets
+            (IJB-B, IJB-C) with big
+            enhancements in low-quality surveillance quality datasets (TinyFace, BRIAR, IJB-S)
+        </p>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -445,37 +392,6 @@
 </section>
 
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
