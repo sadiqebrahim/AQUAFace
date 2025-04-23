@@ -58,9 +58,6 @@ pip install -r requirements.txt
 
 To evaluate AQUAFace on standard datasets:
 
-### Data Zoo 
-:tiger:
-
 |Database|Version|\#Identity|\#Image|\#Frame|\#Video|Download Link|
 |:---:|:----:|:-----:|:-----:|:-----:|:-----:|:-----:|
 |[LFW](https://hal.inria.fr/file/index/docid/321923/filename/Huang_long_eccv2008-lfw.pdf)|Raw|5,749|13,233|-|-|[Google Drive](https://drive.google.com/file/d/1JIgAXYqXrH-RbUvcsB3B6LXctLU9ijBA/view?usp=sharing), [Baidu Drive](https://pan.baidu.com/s/1VzSI_xqiBw-uHKyRbi6zzw)|
