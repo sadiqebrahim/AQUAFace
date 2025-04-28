@@ -84,6 +84,60 @@ To evaluate AQUAFace on standard datasets:
 
 ---
 
+## Dataset Preparation
+
+### Evaluation Datasets
+
+Arrange the dataset in the following manner:
+```python
+[PATH]/AQUAFace/val_data/
+├── agedb_30/
+│   ├── agedb_30
+│   ├── agedb_30.bin
+│   └── agedb_30_list.npy
+├── aligned_pad_0.1_pad_high/
+│   ├── Gallery_Distractor
+│   ├── Gallery_Match
+│   ├── Probe
+│   └── Train
+├── calfw/
+│   ├── calfw
+│   ├── calfw.bin
+│   └── calfw_list.npy
+├── cfp_fp/
+│   ├── cfp_ff
+│   ├── cfp_ff.bin
+│   ├── cfp_ff_list.npy
+│   ├── cfp_fp
+│   ├── cfp_fp.bin
+│   └── cfp_fp_list.npy
+├── cplfw/
+│   ├── cplfw
+│   ├── cplfw.bin
+│   └── cplfw_list.npy
+├── ijb/
+│   ├── IJB_11.py
+│   ├── IJBB
+│   ├── IJBC
+│   ├── recognition
+│   └── run.sh
+├── IJB-A/
+│   ├── CleanData
+│   ├── IJB-A_11_output.tar.gz
+│   ├── IJB-A_11_sets.tar.gz
+│   ├── IJB-A_1N_output.tar.gz
+│   └── IJB-A_1N_sets.tar.gz
+├── lfw/
+│   ├── lfw
+│   ├── lfw.bin
+│   └── lfw_list.npy
+├── tinyface/
+    ├── Face_Identification_Evaluation
+    ├── readme.txt
+    ├── Testing_Set
+    └── Training_Set
+```
+
 ## Training
 
 ### Edit the config/config.py to add the appropriate path to datasets, checkpoints, and output directory.
