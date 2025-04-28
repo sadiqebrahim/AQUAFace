@@ -11,7 +11,6 @@ from tqdm import tqdm
 import data_utils
 import argparse 
 import pandas as pd
-import tinyface_helper
 import sys, os
 from models import get_model
 from network_inf import builder_inf
@@ -422,7 +421,7 @@ if __name__ == '__main__':
     # model = load_pretrained_model(args.model_name)
     model.to('cuda:{}'.format(args.gpu))
 
-    tinyface_test = tinyface_helper.TinyFaceTest(tinyface_root=args.data_root,
+    tinyface_test = TinyFaceTest(tinyface_root=args.data_root,
                                                  alignment_dir_name='aligned_pad_0.1_pad_high')
 
     # set save root
