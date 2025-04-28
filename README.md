@@ -45,6 +45,8 @@ Figure 2. Training pipeline of AQUAFace. We have introduced a novel adaptive mar
 
 ## Installation
 ```bash
+git clone https://github.com/sadiqebrahim/AQUAFace
+cd AQUAFace
 conda create -n aquaface python=3.10
 conda activate aquaface
 pip install -r requirements.txt
@@ -82,77 +84,26 @@ To evaluate AQUAFace on standard datasets:
 
 ---
 
-
-## Data Preparation
-Please arrange your dataset in the following structure:
-```bash
-dataset/
-├── train/
-│   ├── id/
-│   ├── selfie/
-├── val/
-│   ├── id/
-│   ├── selfie/
-```
-
----
-
 ## Training
+
+### Edit the config/config.py to add the appropriate path to datasets, checkpoints, and output directory.
+
 ```bash
-python train.py \
-  --config configs/aquaface_config.yaml \
-  --output_dir ./logs/aquaface_run \
-  --data_path ./dataset
+python train.py 
 ```
 
 ---
 
 ## Evaluation
+
+### Edit the config/config_eval.py to add the appropriate path to datasets, checkpoints, and output directory.
+
 ```bash
-python evaluate.py \
-  --checkpoint ./logs/aquaface_run/best_model.pth \
-  --data_path ./dataset/val
+python evaluate.py
 ```
 
 ---
 
-## Results
-
-| Model      | Dataset       | Protocol   | Accuracy (%) |
-|------------|---------------|------------|--------------|
-| Baseline   | [YourDataset] | Cross-Age  | 85.2         |
-| AQUAFace   | [YourDataset] | Cross-Age  | **91.7**     |
-| AQUAFace   | [YourDataset] | Cross-Domain | **92.3**    |
-
----
-
-
-
-## 📈 Results
-
-| Dataset  | Accuracy (%) |
-|----------|--------------|
-| CALFW    | 93.2         |
-| CPLFW    | 91.8         |
-| CFP-FP   | 96.5         |
-| AgeDB    | 94.7         |
-| IJB-C    | 95.1         |
-| TinyFace | 87.4         |
-
----
-
-## 🖼️ Visualizations
-
-<table>
-<tr>
-  <td><img src="assets/vis_age.png" width="300"></td>
-  <td><img src="assets/vis_quality.png" width="300"></td>
-</tr>
-<tr>
-  <td align="center">Age Invariance</td>
-  <td align="center">Quality Adaptiveness</td>
-</tr>
-</table>
 
 ## Citation
 ```bibtex
