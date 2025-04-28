@@ -388,7 +388,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='tinyface')
 
-    parser.add_argument('--data_root', default='/workspace/codes/CurricularFace/val_data')
+    parser.add_argument('--data_root', default='./val_data') 
     parser.add_argument('--gpu', default=0, type=int, help='gpu id')
     parser.add_argument('--batch_size', default=32, type=int, help='')
     parser.add_argument('--model_name', type=str, default='ir18_casia')
