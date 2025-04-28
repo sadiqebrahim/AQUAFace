@@ -92,8 +92,9 @@ Arrange the dataset in the following manner:
 ```python
 [PATH]/AQUAFace/train_data/
 └── SynAM/
-    ├── deAGEDB
+    ├── deAgeDB
     ├── deMORPH
+    ├── all_pairs.txt
     ├── train_pairs.txt
     └── test_pairs.txt
 
