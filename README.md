@@ -86,6 +86,20 @@ To evaluate AQUAFace on standard datasets:
 
 ## Dataset Preparation
 
+### Training Datasets
+
+Arrange the dataset in the following manner:
+```python
+[PATH]/AQUAFace/train_data/
+└── SynAM/
+    ├── deAGEDB
+    ├── deMORPH
+    ├── train_pairs.txt
+    └── test_pairs.txt
+
+```
+
+
 ### Evaluation Datasets
 
 Arrange the dataset in the following manner:
@@ -131,7 +145,7 @@ Arrange the dataset in the following manner:
 │   ├── lfw
 │   ├── lfw.bin
 │   └── lfw_list.npy
-├── tinyface/
+└── tinyface/
     ├── Face_Identification_Evaluation
     ├── readme.txt
     ├── Testing_Set
