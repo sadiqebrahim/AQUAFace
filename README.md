@@ -79,7 +79,7 @@ To evaluate AQUAFace on standard datasets:
 
 ### Synthetic Data (SynAM)
 
-- [SynAM Download (20GB)](https://drive.google.com/drive/folders/XXXXX)
+- [SynAM Download](https://drive.google.com/drive/folders/XXXXX)
 
 
 ---
